@@ -1,0 +1,101 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    background-position: center;
+}
+
+.containerRegister {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 100%;
+    background: rgb(255,126,71);
+    background: linear-gradient(63deg, rgba(255,126,71,1) 0%, rgba(255,236,178,1) 49%, rgba(255,209,0,1) 100%);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registerFormulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid black;
+    outline: none;
+}
+
+input:invalid {
+    border-color: #ff6200;
+}
+
+input:invalid + span {
+    color: #ff6200;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+#btn-registro {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFC107;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btnRegistro {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFC107;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+#btn-registro:disabled {
+    background-color: #CCCCCC;
+    color: #FFFFFF;
+    cursor: not-allowed;
+}
+
+button[type="button"] {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFC107;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+button[type="button"]:hover, #btn-registro:hover {
+    background-color: #FFA000;
+}
+
+

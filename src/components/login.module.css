@@ -1,0 +1,116 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    background-position: center;
+}
+
+.containerForm {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Estilos del formulario de inicio de sesión */
+.loginForm {
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(63deg, rgba(255,126,71,1) 0%, rgba(255,236,178,1) 49%, rgba(255,209,0,1) 100%);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.loginForm h1 {
+    margin-bottom: 2rem;
+    color: #FFBF69;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.loginForm form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm label {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.loginForm input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 3px solid #000;
+    border-radius: 0.5rem;
+    background-color: #eee;
+    width: 100%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.loginForm button {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: #FFBF69;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
+}
+
+.loginForm button:hover {
+    background-color: #FFA500;
+}
+
+.loginForm button:active {
+    transform: scale(0.98);
+}
+
+/* Estilos de la sección de información */
+.infoSection {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    color: #fff;
+    border-radius: 1rem;
+    margin-left: 2rem;
+}
+
+.infoSection h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.infoContainer {
+    background: rgb(255,126,71);
+    background: linear-gradient(63deg, rgba(255,126,71,1) 0%, rgba(255,236,178,1) 49%, rgba(255,209,0,1) 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+    color: #fff;
+    overflow-y: auto;
+    max-height: calc(100% - 4rem); /* Ajusta el tamaño máximo para mantener espacio para el título */
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+
+.infoSlides {
+    line-height: 1.5;
+}
+
+.infoSlides p {
+    margin-bottom: 1rem;
+}
