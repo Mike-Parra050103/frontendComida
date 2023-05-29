@@ -1,12 +1,33 @@
 import React, {useEffect} from 'react';
 import styles from './register.module.css';
+import axios from 'axios'
 
-const handleFinalizarRegistroClick = () => {
-	window.location.href = '/';
+
+const handleFinalizarRegistroClick = async () => {
+	const nombre = document.getElementById('nombre').value;
+	const apellido = document.getElementById('apellido').value;
+	const telefono = document.getElementById('telefono').value;
+	const correo = document.getElementById('correo').value;
+
+	try {
+		const response = await axios.post('/register', {
+			nombre,
+			apellido,
+			telefono,
+			correo,
+		});
+
+		console.log(response.data); // Optional: Print the response data
+
+		// Redirect to the "/" route
+		window.location.href = '/';
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 const handleVolverClick = () => {
-	window.location.href = '/login';
+	window.location.href = '/';
 };
 
 const RegisterForm = () => {
@@ -95,7 +116,9 @@ const RegisterForm = () => {
 						<input type="text" id="telefono" name="telefono" required />
 						<label htmlFor="correo">Correo electrónico</label>
 						<input type="email" id="correo" name="correo" required />
-						<button onClick={handleFinalizarRegistroClick} id="btn-registro" className={styles.btnRegistro} disabled>Finalizar Registro</button>
+						<button onClick={handleFinalizarRegistroClick} id="btn-registro" className={styles.btnRegistro} disabled>
+							Finalizar Registro
+						</button>
 						<button onClick={handleVolverClick} type="button">Volver</button>
 					</form>
 				</div>
