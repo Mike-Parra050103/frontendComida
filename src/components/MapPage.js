@@ -2,6 +2,10 @@ import React, {useEffect, useState} from 'react';
 import L from 'leaflet'
 import styles from './mappage.module.css'
 
+const handleLogOutClick = () => {
+	window.location.href = '/';
+};
+
 const MapPage = () => {
 	// Attach necessary scripts
 	useEffect(() => {
@@ -123,7 +127,7 @@ const MapPage = () => {
 			<div className={styles.popup} id="popup">
 				<h3>Log Out and Close Session?</h3>
 				<div className={styles.buttonContainer}>
-					<button className={styles.popupButton} id="yesButton">Yes</button>
+					<button onClick={handleLogOutClick} className={styles.popupButton} id="yesButton">Yes</button>
 					<button className={styles.popupButton} id="goBackButton">Go Back</button>
 				</div>
 			</div>

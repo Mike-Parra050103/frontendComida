@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import styles from './register.module.css';
 
 const handleFinalizarRegistroClick = () => {
-	window.location.href = '/login';
+	window.location.href = '/';
 };
 
 const handleVolverClick = () => {
@@ -79,13 +79,6 @@ const RegisterForm = () => {
 			});
 		});
 
-// Enviar el formulario al hacer click en el botón de registro
-		botonRegistro.addEventListener('click', (e) => {
-			e.preventDefault();
-			alert('Formulario enviado correctamente');
-			form.reset();
-			botonRegistro.disabled = true;
-		});
 	}, [])
 
 	return (
