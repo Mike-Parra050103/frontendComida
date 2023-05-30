@@ -3,24 +3,27 @@ import styles from './register.module.css';
 import axios from 'axios'
 
 
-const handleFinalizarRegistroClick = async () => {
+const handleFinalizarRegistroClick = async (event) => {
 	const nombre = document.getElementById('nombre').value;
 	const apellido = document.getElementById('apellido').value;
 	const telefono = document.getElementById('telefono').value;
 	const correo = document.getElementById('correo').value;
+	const password = document.getElementById('contraseña').value;
+
+	event.preventDefault();
 
 	try {
-		const response = await axios.post('/register', {
+		const response = await axios.post('http://localhost:3003/api/v1/register', {
 			nombre,
 			apellido,
 			telefono,
 			correo,
 		});
 
-		console.log(response.data); // Optional: Print the response data
-
+		console.log('Data:', { nombre, apellido, telefono, correo });
+		console.log('Response: ', response.data.response); // Optional: Print the response data
 		// Redirect to the "/" route
-		window.location.href = '/';
+
 	} catch (error) {
 		console.error(error);
 	}
@@ -82,7 +85,7 @@ const RegisterForm = () => {
 			}
 		}
 
-// Validar los campos en tiempo real
+		// Validar los campos en tiempo real
 		inputs.forEach((input) => {
 			input.addEventListener('input', (e) => {
 				if (input.type === 'text') {
@@ -116,7 +119,9 @@ const RegisterForm = () => {
 						<input type="text" id="telefono" name="telefono" required />
 						<label htmlFor="correo">Correo electrónico</label>
 						<input type="email" id="correo" name="correo" required />
-						<button onClick={handleFinalizarRegistroClick} id="btn-registro" className={styles.btnRegistro} disabled>
+						<label htmlFor="password">Password</label>
+						<input type="password" id="contraseña" name="password" minLength="8" required/>
+						<button onClick={handleFinalizarRegistroClick} id="btn-registro" type="button" className={styles.btnRegistro}>
 							Finalizar Registro
 						</button>
 						<button onClick={handleVolverClick} type="button">Volver</button>
