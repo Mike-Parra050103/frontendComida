@@ -21,7 +21,7 @@ const handleFinalizarRegistroClick = async (event) => {
 			password
 		});
 
-		console.log('Data:', { nombre, apellido, telefono, correo });
+		console.log('Data:', { nombre, apellido, telefono, correo, password });
 		console.log('Response: ', response.data.response); // Optional: Print the response data
 		// Redirect to the "/" route
 
