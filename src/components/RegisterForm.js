@@ -18,6 +18,7 @@ const handleFinalizarRegistroClick = async (event) => {
 			apellido,
 			telefono,
 			correo,
+			password
 		});
 
 		console.log('Data:', { nombre, apellido, telefono, correo });
